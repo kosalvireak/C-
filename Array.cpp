@@ -2,7 +2,7 @@
 using namespace std;
 
 int array_of_me[5];
-string CART[3] = {};
+string CART[] = {"hi"};
 int i = 0;
 int main(){
     // for(;i<5;i++)
@@ -29,11 +29,7 @@ int main(){
         
 
     // }
-    cout << CART->append("ME");
-    for(;i<3;i++)
-    {
-        cout << CART[i];
-    }
+    cout << getArrayLength;
     
 
 
