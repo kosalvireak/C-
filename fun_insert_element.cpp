@@ -3,32 +3,34 @@
 
 #include<iostream>
 using namespace std;
+
 string name [10] = {"first"};
-int indx;
+int indx = 0;
 string val;
 void insert (  int index, string value)
 {
     const int num = index;
-    string name[num] = value;
+    name[num] = value;
 }
 int main(){
-    cout << "Type 'out' it will end \n";
-    for (int i =0; i<= sizeof(name);i++)
+    cout << "Type '5555' it will end \n";
+    while ( indx != 5555)
     {   
         cout <<"Enter the index: ";
-        // cin >>indx;
-        cout << "Enter the value in string: ";
-        // cin >> val;
-        insert(i,"hi");
-        if (val == "out")
+        cin >>indx;
+        
+        if (indx == 5555)
         {
             break;
         }
+        cout << "Enter the value in string: ";
+        cin >> val;
+        insert(indx,val);
         
     }
-    for (int n = 0; n < 5; n++)
+    for (int n = 0; n <= 10; n++)
     {
-        cout <<"\nStudent "<<n <<" is: "<< name[n];
+        cout << "name ["<<n<<"]: { " <<name[n]<<" }\n";
         
 
     }
