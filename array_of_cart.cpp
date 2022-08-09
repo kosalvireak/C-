@@ -33,7 +33,7 @@ void Add_Cart(string array[3])
     len++;
     int index;
     cout << "3 : Back to CART\n";
-    cout << "5555 : Back to SHOP\n";
+    cout << "4 : Back to SHOP\n";
     cout << "\nEnter index :  ";
     cin >> index;
     switch (index)
@@ -65,9 +65,9 @@ void Add_Cart(string array[3])
         break;
         // case 3 :
         //     CARTs();
-        //     cout <<"5555 : Back to SHOP\n";
+        //     cout <<"4 : Back to SHOP\n";
         //     break;
-        // case 5555 :
+        // case 4 :
         //     start();
         //     //cout <<"3 : Back to SHOP\n";
         //     break;
@@ -75,40 +75,50 @@ void Add_Cart(string array[3])
 }
 
 void Foods()
-{
-    cout << "\n----FOOD----\n";
+{   cout<<"\n";
+    cout << "----FOOD----\n";
+    //cout<<"\n";
     for (int i = 0; i <= 2; i++)
     {
         cout << i << " : " << Food[i] << "\n";
     }
     // cout << "3 : CART";
-    // cout <<"5555 : Back to SHOP\n";
+    // cout <<"4 : Back to SHOP\n";
     // add to cart
+    cout<<"\n----------------\n";
     Add_Cart(Food);
     // Foods();
 }
 void Sports()
 {
-    cout << "\n----SPORT----\n";
+    
+    cout << "----SPORT----\n";
+    cout<<"\n";
     for (int i = 0; i <= 2; i++)
     {
         cout << i << " : " << Sport[i] << "\n";
     }
+    cout<<"\n----------------\n";
     Add_Cart(Sport);
 }
 void Books()
 {
-    cout << "\n----BOOK----\n";
+    
+    cout << "----BOOK----\n";
+    cout<<"\n";
     for (int i = 0; i <= 2; i++)
     {
         cout << i << " : " << Book[i] << "\n";
     }
+    cout<<"\n----------------\n";
     Add_Cart(Book);
 }
 void CARTs()
 {
+    
     // int leng = *(&CART + 1) - CART;
-    cout << "\n----CART----\n";
+    cout << "----CART----\n";
+    cout<<"\n";
     for (int i = 1; i <= len; i++)
     {
         cout << i << " : " << CART[i] << "\n";
@@ -125,7 +135,7 @@ int main()
     while (j < 20)
     {
         j++;
-        cout << "Enter index :  ";
+        cout << "\nEnter index :  ";
         cin >> index;
         // cout <<"here";
         switch (index)
@@ -149,14 +159,17 @@ int main()
             cout << "|1 : Back to SPORT  |\n";
             cout << "|2 : Back to BOOK   |\n";
 
-            cout << "|5555 : Back to SHOP|\n";
+            cout << "|4 : Back to SHOP   |\n";
+            cout << "|5 : End Shopping   |\n";
             cout << "---------------------\n";
 
             break;
-        case 5555:
+        case 4:
             start();
             // cout <<"3 : Back to SHOP\n";
             break;
+        case 5:
+            j = j + 20;
         }
     }
 }
