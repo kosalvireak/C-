@@ -5,6 +5,7 @@ int main(){
     int *y = &x;
     cout << x
         <<endl;
-    cout <<y;
+    cout <<y<<endl;
+    cout <<*y;
 
 }
