@@ -63,14 +63,6 @@ void Add_Cart(string array[3])
         start();
         // len ++;
         break;
-        // case 3 :
-        //     CARTs();
-        //     cout <<"4 : Back to SHOP\n";
-        //     break;
-        // case 4 :
-        //     start();
-        //     //cout <<"3 : Back to SHOP\n";
-        //     break;
     }
 }
 
