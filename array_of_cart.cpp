@@ -15,7 +15,7 @@ string Food[3] = {"Salad", "Porridge", "Steak"};
 string Sport[3] = {"Aerobics", "Tourism", "Badminton"};
 string Book[3] = {"Thrillers", "Fantasy", "Horror"};
 string CART[10] = {"Empty"};
-// length array CART
+
 int len = 0;
 void CARTs();
 
