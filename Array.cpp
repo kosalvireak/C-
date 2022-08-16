@@ -29,7 +29,7 @@ int main(){
         
 
     // }
-    cout << getArrayLength;
+    
     
 
 
