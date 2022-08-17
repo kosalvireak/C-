@@ -3,7 +3,7 @@
 using namespace std;
 int main()
 {  //Given array
-   string  arr[] = {"me"};
+   string  arr[] = {"me","you"};
    
    int len = *(&arr + 1) - arr;
    //*(&arr + 1) is the address of the next memory location

@@ -1,3 +1,6 @@
+// create 2 array one is int and the other is string
+// Program insert int and string to array and number of those elements
+
 #include <iostream>
 using namespace std;
 
