@@ -150,7 +150,6 @@ int main()
             cout << "|0 : Back to FOOD   |\n";
             cout << "|1 : Back to SPORT  |\n";
             cout << "|2 : Back to BOOK   |\n";
-
             cout << "|4 : Back to SHOP   |\n";
             cout << "|5 : End Shopping   |\n";
             cout << "---------------------\n";

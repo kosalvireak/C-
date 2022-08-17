@@ -14,3 +14,17 @@
 ### Display output
 
 `cout << "This is x: "<<x; `
+
+### Pointer
+We use pointer to point the memory address of the variable
+
+```
+int x = 5;
+int *y = %x;
+cout << y; //0x404004
+```
+We assign pointer by `*` and `name` of the pointer. *EX:* `*y` = `&x`
+
+When print out `cout << y;`, it will show the value that indicate memory address stored x. *EX.* `0x404004`
+
+Otherwise if we want to print out the value of our variable by using pointer `cout << *y;`, It will show `5` which is the original value of x.
