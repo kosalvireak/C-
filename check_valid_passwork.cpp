@@ -1,22 +1,31 @@
+​‌‌‍ //Programs Check whether the password from user input are follow below rule​
 
-// Sopheakna Nhork
+// Please enter a password which should contain :
+// * A password must have exactly 8 characters.
+// * A password must consist of only digits and letters.
+// * A password must always start with a digit.
+// * at least one upper letter
+
 #include <iostream>
 #include <string>
 
-using namespace std;
+    using namespace std;
 
-void checkpw(string password) {
+void checkpw(string password)
+{
   int n = password.length();
   bool hasLower = false, hasUpper = false, hasDigit = false;
-  for (int i = 0; i < n; i++) {
+  for (int i = 0; i < n; i++)
+  {
     if (islower(password[i]))
       hasLower = true;
     if (isupper(password[i]))
       hasUpper = true;
     if (isdigit(password[i]))
       hasDigit = true;
-    if (password[i] == '!' || password[i] == '@' || password[i] == '#' || password[i] == '$'){
-        cout << "Invalid, This password consist of the special character" << endl;
+    if (password[i] == '!' || password[i] == '@' || password[i] == '#' || password[i] == '$')
+    {
+      cout << "Invalid, This password consist of the special character" << endl;
     }
   }
   // Displaying the strength of password
@@ -36,25 +45,26 @@ void checkpw(string password) {
 
   else
     cout << "Invalid, This password doesn't an upper letter" << endl;
-
 }
-int main() {
+int main()
+{
   cout << "Welcome, lets check your password " << endl;
   cout << "Please enter a password which should contain :- " << endl;
   cout << " * A password must have exactly 8 characters. " << endl;
-   cout << " * A password must consist of only digits and letters. " << endl;
+  cout << " * A password must consist of only digits and letters. " << endl;
   cout << " * A password must always start with a digit. " << endl;
   cout << " * at least one upper letter " << endl;
   string password;
   cout << "Enter password: ";
   getline(cin, password);
-  if (isdigit(password[0])){
-     checkpw(password);
-    }
-    else{
-        cout << "Password must always start with a digit";
-    }
+  if (isdigit(password[0]))
+  {
+    checkpw(password);
+  }
+  else
+  {
+    cout << "Password must always start with a digit";
+  }
 
-//   checkpw(password);
   return 0;
 }
