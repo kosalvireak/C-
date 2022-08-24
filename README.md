@@ -1,21 +1,21 @@
 # For C++ language @RUPP and related stuff.
-### Header file 
+## Header file 
 
 `#include <iostream>`
 
-### Using standard input & output
+## Using standard input & output
 
 `using namespace std;`
 
-### Get input
+## Get input
 
 `cin >> x;`
 
-### Display output
+## Display output
 
 `cout << "This is x: "<<x; `
 
-### Pointer
+## Pointer
 We use pointer to point the memory address of the variable
 
 ```
@@ -29,11 +29,20 @@ When print out `cout << y;`, it will show the value that indicate memory address
 
 Otherwise if we want to print out the value of our variable by using pointer `cout << *y;`, It will show `5` which is the original value of x.
 
-#### Pointer string
-`char* word ="hello";`
+## Pointer string
 
-The warning will show. pointer_practice_24_08.cpp:12:18: warning: ISO C++ forbids converting a string constant to 'char*'  char* word = "hello";
+`char* word ="hello";` The warning will show. 
+
+*pointer_practice_24_08.cpp:12:18: warning: ISO C++ forbids converting a string constant to 'char*'  char* word = "hello";*
 
 Thus we should specify `const before char`
 
 `const char* word = "hello";`
+
+## Go to 
+``` 
+jump:
+cout<< "Hello";
+go to jump:
+
+```
