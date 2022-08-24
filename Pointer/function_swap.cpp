@@ -1,11 +1,11 @@
 #include <iostream>
 using namespace std;
 int a, b;
-void swap(int &a, int &b)
+void swap(int* a, int* b)
 {
-    int temp = a;
-    a = b;
-    b = temp;
+    int temp = *a;
+    *a = *b;
+    *b = temp;
 }
 int main()
 {
@@ -14,6 +14,6 @@ int main()
     cout << "Enter b: ";
     cin >> b;
     cout << "Before swap: a = " << a << ", b = " << b << endl;
-    swap(a,b);
+    swap(&a,&b);
     cout << "After swap: a = " << a << ", b = " << b << endl;
 }
