@@ -7,18 +7,19 @@
 #include <iostream>
 using namespace std;
 int num;
-const char* day1 = "Sunday";
-const char* day2 = "Monday";
-const char* day3 = "Tuesday";
-const char* day4 = "Wednesday";
-const char* day5 = "Thursday";
-const char* day6 = "Friday";
-const char* day7 = "Saturday";
+const char *day1 = "Sunday";
+const char *day2 = "Monday";
+const char *day3 = "Tuesday";
+const char *day4 = "Wednesday";
+const char *day5 = "Thursday";
+const char *day6 = "Friday";
+const char *day7 = "Saturday";
 int main()
 {
+jump:
     cout << "Enter a number (1 -7): ";
     cin >> num;
-    cout << "Num: " << num << endl;
+    // cout << "Num: " << num << endl;
 
     switch (num)
     {
@@ -45,7 +46,8 @@ int main()
         break;
 
     default:
-        cout <<"Please put between 1 to 7";
+        cout << "Please put between 1 to 7" << endl;
+        goto jump;
         break;
     }
 }
