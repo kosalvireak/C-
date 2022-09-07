@@ -29,7 +29,7 @@ When print out `cout << y;`, it will show the value that indicate memory address
 
 Otherwise if we want to print out the value of our variable by using pointer `cout << *y;`, It will show `5` which is the original value of x.
 
-## Pointer string
+### Pointer string
 
 `char* word ="hello";` The warning will show. 
 
@@ -49,4 +49,51 @@ go to jump:
 
 ## Structures
 It is a group of element (variables) Compare to C# OOP, it is like a class that we can instantiate object from.
+
+Structures hold data that belong together 
+
+#### In C++, structure declaration uses keyword `struct`
+```
+struct Date{​
+
+   int day;​
+
+   int month;​
+
+   int year;​
+
+};
+```
+### Declaration of Structures
+
+We can declare variable of the struct by
+
+#### Syntax 1 (declare outside struct)
+```
+struct circle{​
+
+   int x;​
+
+   int y;​
+
+   float radius;​
+};​
+// Declaration of a variable of struct type ​
+
+struct circle c1, c2, c3;​
+
+```
+#### Syntax 2 (declare inside struct)
+```
+struct circle{​
+
+   int x;​
+
+   int y;​
+
+   float radius;​
+} c1, c2, c3;​
+
+```
+
 
