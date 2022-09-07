@@ -46,3 +46,7 @@ cout<< "Hello";
 go to jump:
 
 ```
+
+## Structures
+It is a group of element (variables) Compare to C# OOP, it is like a class that we can instantiate object from.
+
