@@ -52,7 +52,7 @@ It is a group of element (variables) Compare to C# OOP, it is like a class that 
 
 Structures hold data that belong together 
 
-#### In C++, structure declaration uses keyword `struct`
+### In C++, structure declaration uses keyword `struct`
 ```
 struct Date{​
 
@@ -96,4 +96,29 @@ struct circle{​
 
 ```
 
+### Structures Initialization​
+```
+struct circle{​
+
+   int x;​
+
+   int y;​
+
+   float radius;​
+
+};​
+```
+#### Initializing structure with list​
+```
+struct circle c={
+    20, 50, 12.31
+};
+```
+#### Initializing structure with individual element​
+```
+struct circle c;
+c.x = 20;
+c.y = 50;
+c.radius = 12.31;
+```
 
