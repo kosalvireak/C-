@@ -121,4 +121,53 @@ c.x = 20;
 c.y = 50;
 c.radius = 12.31;
 ```
+### Accessing Structures Member​
+We access the structure member by using
+`struct-identifier`.`member`;
+`circle.x;`
 
+### Structure and Function​
+#### Returning values of struct from the function ​
+```
+Circle makeCircle(float x, float y, float radius){​
+
+   Circle circle;​
+
+   circle.x = x;​
+
+   circle.y = y;​
+
+   circle.radius = radius;​
+
+   return circle;​
+
+}​
+```
+#### Passing struct as argument to function ​
+```
+void getCircle(Circle circle){​
+
+   printf("Circle x:%f", circle.x);​
+
+   printf("Circle y:%f", circle.y);​
+
+   printf("Circle radus:%f", circle.radius);​
+
+}​
+```
+### Array of Structure
+```
+typedef struct car{​
+
+    char brand[10];​
+
+    int colorCode;​
+
+    int price;​
+
+}Cars;​
+//defines an array called Car that has 5 elements ​
+
+Cars car[5];
+
+```
