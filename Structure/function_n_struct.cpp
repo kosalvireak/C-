@@ -6,14 +6,14 @@ struct laptop
     int price;
     string series;
 };
-struct laptop l1;
+struct laptop l1, l2;
 void get_value(){
     
     cout << "Enter model: ";
     cin >>l1.model;
     
     cout << "Enter price: ";
-    cin >>l1.price;
+    cin >>l2.price;
     
     cout << "Enter year series: ";
     cin >>l1.series;
@@ -22,7 +22,7 @@ void get_value(){
 void return_value()
 {
     cout << "Model: "<<l1.model<<endl;
-    cout << "Price: "<<l1.price<<endl;
+    cout << "Price: "<<l2.price<<endl;
     cout << "Series: "<<l1.series<<endl;
 }
 int main(){

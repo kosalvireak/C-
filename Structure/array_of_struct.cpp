@@ -27,11 +27,11 @@ void return_value(int i)
     cout << "plate: "<<CAR[i].plate<<endl;
 }
 int main(){
-    for (int i = 0; i < 5; i ++)
+    for (int i = 0; i < 2; i ++)
     { 
         get_value(i);
     }
-   for (int i = 0; i < 5; i ++)
+   for (int i = 0; i < 2; i ++)
     {
         return_value(i);
     }

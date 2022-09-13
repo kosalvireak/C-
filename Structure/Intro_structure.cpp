@@ -16,7 +16,7 @@ struct
 
 
 int main(){
-    struct  person p1 ={
+    struct  person p1 ={ //initialize by using list
         "vireak", 19, "M", "14/Feb/2022"
     };
     struct person p2 =
