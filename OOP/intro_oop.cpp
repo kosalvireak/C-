@@ -9,30 +9,13 @@ public:
     double width;
     double height;
     // Constructor
-    Box(double lengthValue, double widthValue, double heightValue)
+    Box()
     {
-        cout << "Box constructor called" << endl;
-        length = lengthValue;
-        width = widthValue;
-        height = heightValue;
-    }
-    // Function to calculate the volume of a box
-    double volume()
-    {
-        return length * width * height;
+        cout<<"default constructor";
     }
 };
 int main()
 {
-
-    Box firstBox(80, 50, 40);
-    // Calculate the volume of the box
-    cout << endl;
-    cout << "Size of first Box object is "
-         << firstBox.length << " by "
-         << firstBox.width << " by "
-         << firstBox.height
-         << endl;
-    cout << "Volume of first Box object is " << firstBox.volume()<< endl;
+    Box firstBox;
     return 0;
 }
