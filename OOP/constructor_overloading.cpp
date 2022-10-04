@@ -23,6 +23,11 @@ int main()
     Person firstPerson(2);
     cout << "First constructor " << firstPerson.arm << endl;
     Person secondPerson(4, 20);
-    cout << "Second constructor " << secondPerson.arm << " " << secondPerson.leg;
+    cout << "Second constructor " << secondPerson.arm << " " << secondPerson.leg << endl;
+    Person thirdPerson(secondPerson);
+    cout << thirdPerson.arm << endl;
+    thirdPerson.arm = 10;
+    cout << thirdPerson.arm << endl;
+
     return 0;
 }
