@@ -28,8 +28,7 @@ int main()
     // cout << me;
     Projector user;
 
-    
-    while (true)
+        while (true)
     {
         string me;
         cout << "\nEnter your name: ";
