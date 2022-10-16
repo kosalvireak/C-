@@ -27,6 +27,8 @@ int main()
 
     // cout << me;
     Projector user;
+
+    
     while (true)
     {
         string me;
