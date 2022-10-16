@@ -24,13 +24,14 @@ public:
 };
 int main()
 {
-    string me;
-    cout << "Enter your name: ";
-    cin >> me;
+
     // cout << me;
     Projector user;
     while (true)
     {
+        string me;
+        cout << "\nEnter your name: ";
+        cin >> me;
         int choice;
         cout << "--------------------------";
         cout << "\nSelect one Projector below ";
@@ -63,5 +64,6 @@ int main()
             cout << "\nEnter correct choice";
             exit(0);
         }
+        user.show_data();
     }
 }
