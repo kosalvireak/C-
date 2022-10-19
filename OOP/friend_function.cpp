@@ -6,11 +6,11 @@ class Box
     double width = 5;
 
 public:
-    friend void printWidth(Box obj);
+    friend void printWidth(Box obj_of_Box);
 };
-void printWidth(Box obj)
+void printWidth(Box obj_of_Box)
 {
-    cout << "Width of box : " << obj.width << endl;
+    cout << "\nWidth of box : " << obj_of_Box.width << endl;
 }
 int main()
 {
