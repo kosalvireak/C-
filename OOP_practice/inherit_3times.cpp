@@ -16,7 +16,7 @@ public:
         cout << "cat sound meow meow" << endl;
     }
 };
-class dog : public cat
+class dog : public animal
 {
 };
 int main()
