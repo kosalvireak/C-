@@ -9,7 +9,7 @@ int main()
     // cout << pvalue << endl;
     // cout << *pvalue;        //call by reference
 
-    char *word = "hello";
+    const char *word = "hello";
     const char *pproverb2 = "Hello there";
     cout << word << endl;
     cout << pproverb2 << endl;

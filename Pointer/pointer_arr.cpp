@@ -8,5 +8,5 @@ int main()
     for(int i = 0; i <= 5;i++){
         cout<<"\nAddress: "<< p+i;
         cout<<"\nValue: " <<*(p+i);
-    }   
+    }
 }
