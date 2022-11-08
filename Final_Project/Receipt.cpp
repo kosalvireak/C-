@@ -49,6 +49,7 @@ void fun_case2(Receipt obj)
     cout << "99. Go Back" << endl;
     int add_item;
     int Number1;
+gooo:
     cout << "Enter to choose food: ";
     cin >> add_item;
     switch (add_item)
@@ -62,7 +63,7 @@ void fun_case2(Receipt obj)
         break;
     case 2:
         Number1 = Number_of_Item();
-        MyWriteFile << obj.Fry_Chicken[0] << "             " << Number1 << "pcs"
+        MyWriteFile << obj.Fry_Chicken[0] << "       " << Number1 << "pcs"
                     << "              " << stoi(obj.Fry_Chicken[1]) * Number1 << "$" << endl;
         break;
     case 3:
@@ -72,29 +73,32 @@ void fun_case2(Receipt obj)
         break;
     case 4:
         Number1 = Number_of_Item();
-        MyWriteFile << obj.Breadstick[0] << "             " << Number1 << "pcs"
+        MyWriteFile << obj.Breadstick[0] << "        " << Number1 << "pcs"
                     << "              " << stoi(obj.Breadstick[1]) * Number1 << "$" << endl;
         break;
     case 5:
         Number1 = Number_of_Item();
-        MyWriteFile << obj.Spaghetti[0] << "             " << Number1 << "pcs"
+        MyWriteFile << obj.Spaghetti[0] << "         " << Number1 << "pcs"
                     << "              " << stoi(obj.Spaghetti[1]) * Number1 << "$" << endl;
         break;
     case 6:
         Number1 = Number_of_Item();
-        MyWriteFile << obj.Ice_Cream[0] << "             " << Number1 << "pcs"
+        MyWriteFile << obj.Ice_Cream[0] << "         " << Number1 << "pcs"
                     << "              " << stoi(obj.Ice_Cream[1]) * Number1 << "$" << endl;
         break;
     case 7:
         Number1 = Number_of_Item();
-        MyWriteFile << obj.Chicken_Wing[0] << "             " << Number1 << "pcs"
+        MyWriteFile << obj.Chicken_Wing[0] << "      " << Number1 << "pcs"
                     << "              " << stoi(obj.Chicken_Wing[1]) * Number1 << "$" << endl;
         break;
     case 99:
+        Welcome_page(obj);
         break;
     default:
+        Welcome_page(obj);
         break;
     }
+    goto gooo;
     MyWriteFile.close();
 };
 // void fun_case3(Receipt obj){
@@ -102,28 +106,28 @@ void fun_case2(Receipt obj)
 // };
 void fun_case4(Receipt obj)
 {
-    cout << "=======================================" << endl;
+    cout << "----------------------------------------" << endl;
     cout << "Shop name: " << obj.Shop_Title << endl;
     cout << "Customer name: " << obj.Customer_Name << endl;
     // Get time
     time_t now = time(0);
     char *dt = ctime(&now);
     cout << "Time Purchase: " << dt;
-    cout << "----------------------------------------" << endl;
+    cout << "=======================================" << endl;
     // info from external file
     string myText;
     ifstream MyReadFile("save_receipt.txt");
     while (getline(MyReadFile, myText))
     {
-        cout << myText;
+        cout << myText << endl;
     }
     // Close the file
     MyReadFile.close();
-    cout << "\n----------------------------------------" << endl;
+    cout << "\n=======================================" << endl;
     cout << "Total                             " << endl;
     cout << "Total + 10% Tax                   " << endl;
     cout << "     Thank you for your purchases!!     " << endl;
-    cout << "=======================================" << endl;
+    cout << "----------------------------------------" << endl;
 };
 void Welcome_page(Receipt customer1)
 {
