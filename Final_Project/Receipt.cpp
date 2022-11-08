@@ -9,9 +9,24 @@ class Receipt
 public:
     string Shop_Title = "as";
     string Customer_Name = "ass";
+    // use dictionary to store these value
+    string Pizza[2] = {"Pizza", "10"};
+    string Fry_Chicken[2] = {"Fry Chicken", "3"};
+    string Donut[2] = {"Donut", "1"};
+    string Breadstick[2] = {"Breadstick", "4"};
+    string Spaghetti[2] = {"Spaghetti", "5"};
+    string Ice_Cream[2] = {"Ice-Cream", "2"};
+    string Chicken_Wing[2] = {"Chicken Wing", "3"};
 };
 // function declaration
 void Welcome_page(Receipt customer1);
+int Number_of_Item()
+{
+    int Number;
+    cout << "Enter Number of Item: ";
+    cin >> Number;
+    return Number;
+};
 
 void fun_case1(Receipt obj)
 {
@@ -24,33 +39,56 @@ void fun_case1(Receipt obj)
 void fun_case2(Receipt obj)
 {
     ofstream MyWriteFile("save_receipt.txt");
-    cout << "1. Pizza                10$" << endl;
-    cout << "2. Fry Chicken	        3$" << endl;
-    cout << "3. Donut		1.5$" << endl;
-    cout << "4. Breadstick		4.8$" << endl;
-    cout << "5. Spaghetti		5.3$" << endl;
-    cout << "6. Ice-Cream		2.3" << endl;
-    cout << "7. Chicken Wing 	3$" << endl;
+    cout << obj.Pizza[0] << "           " << obj.Pizza[1] << "$" << endl;
+    cout << obj.Fry_Chicken[0] << "     " << obj.Fry_Chicken[1] << "$" << endl;
+    cout << obj.Donut[0] << "           " << obj.Donut[1] << "$" << endl;
+    cout << obj.Breadstick[0] << "      " << obj.Breadstick[1] << "$" << endl;
+    cout << obj.Spaghetti[0] << "       " << obj.Spaghetti[1] << "$" << endl;
+    cout << obj.Ice_Cream[0] << "       " << obj.Ice_Cream[1] << "$" << endl;
+    cout << obj.Chicken_Wing[0] << "    " << obj.Chicken_Wing[1] << "$" << endl;
     cout << "99. Go Back" << endl;
     int add_item;
-    cout << "Enter: ";
+    int Number1;
+    cout << "Enter to choose food: ";
     cin >> add_item;
     switch (add_item)
     {
     case 1:
-        MyWriteFile << "Files can be tricky, but it is fun enough!";
+        Number1 = Number_of_Item();
+        MyWriteFile << obj.Pizza[0] << "             " << Number1 << "pcs"
+                    << "              " << stoi(obj.Pizza[1]) * Number1 << "$" << endl;
+
+        // call function to increase the total price
         break;
     case 2:
+        Number1 = Number_of_Item();
+        MyWriteFile << obj.Fry_Chicken[0] << "             " << Number1 << "pcs"
+                    << "              " << stoi(obj.Fry_Chicken[1]) * Number1 << "$" << endl;
         break;
     case 3:
+        Number1 = Number_of_Item();
+        MyWriteFile << obj.Donut[0] << "             " << Number1 << "pcs"
+                    << "              " << stoi(obj.Donut[1]) * Number1 << "$" << endl;
         break;
     case 4:
+        Number1 = Number_of_Item();
+        MyWriteFile << obj.Breadstick[0] << "             " << Number1 << "pcs"
+                    << "              " << stoi(obj.Breadstick[1]) * Number1 << "$" << endl;
         break;
     case 5:
+        Number1 = Number_of_Item();
+        MyWriteFile << obj.Spaghetti[0] << "             " << Number1 << "pcs"
+                    << "              " << stoi(obj.Spaghetti[1]) * Number1 << "$" << endl;
         break;
     case 6:
+        Number1 = Number_of_Item();
+        MyWriteFile << obj.Ice_Cream[0] << "             " << Number1 << "pcs"
+                    << "              " << stoi(obj.Ice_Cream[1]) * Number1 << "$" << endl;
         break;
     case 7:
+        Number1 = Number_of_Item();
+        MyWriteFile << obj.Chicken_Wing[0] << "             " << Number1 << "pcs"
+                    << "              " << stoi(obj.Chicken_Wing[1]) * Number1 << "$" << endl;
         break;
     case 99:
         break;
@@ -64,6 +102,7 @@ void fun_case2(Receipt obj)
 // };
 void fun_case4(Receipt obj)
 {
+    cout << "=======================================" << endl;
     cout << "Shop name: " << obj.Shop_Title << endl;
     cout << "Customer name: " << obj.Customer_Name << endl;
     // Get time
@@ -84,6 +123,7 @@ void fun_case4(Receipt obj)
     cout << "Total                             " << endl;
     cout << "Total + 10% Tax                   " << endl;
     cout << "     Thank you for your purchases!!     " << endl;
+    cout << "=======================================" << endl;
 };
 void Welcome_page(Receipt customer1)
 {
