@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdio>
 #include <ctime>
 #include <fstream>
 #include <string>
@@ -20,10 +21,13 @@ public:
 };
 // function declaration
 void Welcome_page(Receipt customer1);
-int Number_of_Item()
+// Create a function to auto pass data member
+// MyWriteFile << obj.Pizza[0] << "             " << Number1 << "pcs"
+//                    << "              " << stoi(obj.Pizza[1]) * Number1 << "$" << endl;
+int Number_of_Item(string food_name)
 {
     int Number;
-    cout << "Enter Number of Item: ";
+    cout << "Enter Number of " << food_name << ": ";
     cin >> Number;
     return Number;
 };
@@ -39,55 +43,55 @@ void fun_case1(Receipt obj)
 void fun_case2(Receipt obj)
 {
     ofstream MyWriteFile("save_receipt.txt");
-    cout << obj.Pizza[0] << "           " << obj.Pizza[1] << "$" << endl;
-    cout << obj.Fry_Chicken[0] << "     " << obj.Fry_Chicken[1] << "$" << endl;
-    cout << obj.Donut[0] << "           " << obj.Donut[1] << "$" << endl;
-    cout << obj.Breadstick[0] << "      " << obj.Breadstick[1] << "$" << endl;
-    cout << obj.Spaghetti[0] << "       " << obj.Spaghetti[1] << "$" << endl;
-    cout << obj.Ice_Cream[0] << "       " << obj.Ice_Cream[1] << "$" << endl;
-    cout << obj.Chicken_Wing[0] << "    " << obj.Chicken_Wing[1] << "$" << endl;
+    cout << "1." << obj.Pizza[0] << "           " << obj.Pizza[1] << "$" << endl;
+    cout << "2." << obj.Fry_Chicken[0] << "     " << obj.Fry_Chicken[1] << "$" << endl;
+    cout << "3." << obj.Donut[0] << "           " << obj.Donut[1] << "$" << endl;
+    cout << "4." << obj.Breadstick[0] << "      " << obj.Breadstick[1] << "$" << endl;
+    cout << "5." << obj.Spaghetti[0] << "       " << obj.Spaghetti[1] << "$" << endl;
+    cout << "6." << obj.Ice_Cream[0] << "       " << obj.Ice_Cream[1] << "$" << endl;
+    cout << "7." << obj.Chicken_Wing[0] << "    " << obj.Chicken_Wing[1] << "$" << endl;
     cout << "99. Go Back" << endl;
     int add_item;
     int Number1;
 gooo:
-    cout << "Enter to choose food: ";
+    cout << "Enter the index to choose the foods: ";
     cin >> add_item;
     switch (add_item)
     {
     case 1:
-        Number1 = Number_of_Item();
+        Number1 = Number_of_Item("Pizza");
         MyWriteFile << obj.Pizza[0] << "             " << Number1 << "pcs"
                     << "              " << stoi(obj.Pizza[1]) * Number1 << "$" << endl;
 
         // call function to increase the total price
         break;
     case 2:
-        Number1 = Number_of_Item();
+        Number1 = Number_of_Item("Fry Chicken");
         MyWriteFile << obj.Fry_Chicken[0] << "       " << Number1 << "pcs"
                     << "              " << stoi(obj.Fry_Chicken[1]) * Number1 << "$" << endl;
         break;
     case 3:
-        Number1 = Number_of_Item();
+        Number1 = Number_of_Item("Donut");
         MyWriteFile << obj.Donut[0] << "             " << Number1 << "pcs"
                     << "              " << stoi(obj.Donut[1]) * Number1 << "$" << endl;
         break;
     case 4:
-        Number1 = Number_of_Item();
+        Number1 = Number_of_Item("Breadstick");
         MyWriteFile << obj.Breadstick[0] << "        " << Number1 << "pcs"
                     << "              " << stoi(obj.Breadstick[1]) * Number1 << "$" << endl;
         break;
     case 5:
-        Number1 = Number_of_Item();
+        Number1 = Number_of_Item("Spaghetti");
         MyWriteFile << obj.Spaghetti[0] << "         " << Number1 << "pcs"
                     << "              " << stoi(obj.Spaghetti[1]) * Number1 << "$" << endl;
         break;
     case 6:
-        Number1 = Number_of_Item();
+        Number1 = Number_of_Item("Ice-Cream");
         MyWriteFile << obj.Ice_Cream[0] << "         " << Number1 << "pcs"
                     << "              " << stoi(obj.Ice_Cream[1]) * Number1 << "$" << endl;
         break;
     case 7:
-        Number1 = Number_of_Item();
+        Number1 = Number_of_Item("Chicken Wing");
         MyWriteFile << obj.Chicken_Wing[0] << "      " << Number1 << "pcs"
                     << "              " << stoi(obj.Chicken_Wing[1]) * Number1 << "$" << endl;
         break;
@@ -113,7 +117,7 @@ void fun_case4(Receipt obj)
     time_t now = time(0);
     char *dt = ctime(&now);
     cout << "Time Purchase: " << dt;
-    cout << "=======================================" << endl;
+    cout << "========================================" << endl;
     // info from external file
     string myText;
     ifstream MyReadFile("save_receipt.txt");
@@ -123,7 +127,7 @@ void fun_case4(Receipt obj)
     }
     // Close the file
     MyReadFile.close();
-    cout << "\n=======================================" << endl;
+    cout << "\n========================================" << endl;
     cout << "Total                             " << endl;
     cout << "Total + 10% Tax                   " << endl;
     cout << "     Thank you for your purchases!!     " << endl;
@@ -160,6 +164,9 @@ void Welcome_page(Receipt customer1)
 };
 int main()
 {
+    // deletes the file if it exists b4 the code started
+    char filename[] = "save_receipt.txt";
+    int result = remove(filename);
     Receipt customer1;
     cout << "Hello to our System" << endl;
     Welcome_page(customer1);

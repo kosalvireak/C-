@@ -1,6 +1,0 @@
-Pizza             11pcs              110$
-Fry Chicken       22pcs              66$
-Donut             33pcs              33$
-Breadstick        44pcs              176$
-Spaghetti         55pcs              275$
-Ice-Cream         66pcs              132$

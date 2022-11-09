@@ -1,12 +1,25 @@
+
 #include <iostream>
 #include <fstream>
-#include <string>
+
 using namespace std;
 
 int main()
 {
-    // Create a text file
-    string strdata1 = "108";
-    // int intdata1 = stoi(strdata1);
-    cout << stoi(strdata1) + 1;
+    ifstream file;
+    file.open("save_receipt.txt");
+    if (!file.is_open())
+    {
+        cout << "Unable to open the file." << endl;
+        return 0;
+    }
+
+    string line;
+    while (getline(file, line))
+    {
+        cout << line << endl;
+    }
+
+    file.close();
+    return 0;
 }
