@@ -1,1 +1,2 @@
-Donut             44pcs              44$
+Pizza             11pcs       10$        110$
+Fry Chicken       22pcs       3$         66$

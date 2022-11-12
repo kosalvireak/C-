@@ -1,55 +1,36 @@
 
-// C++ Program to delete the given
-// line number from a file
-#include <bits/stdc++.h>
+#include <iostream>
+#include <map>
+#include <string>
 using namespace std;
-  
-// Delete n-th line from given file
-void delete_line(const char *file_name, int n)
-{
-    // open file in read mode or in mode
-    ifstream is(file_name);
-  
-    // open file in write mode or out mode
-    ofstream ofs;
-    ofs.open("save_receipt.txt", ofstream::out);
-  
-    // loop getting single characters
-    char c;
-    int line_no = 1;
-    while (is.get(c))
-    {
-        // if a newline character
-        if (c == '\n')
-        line_no++;
-  
-        // file content not to be deleted
-        if (line_no != n)
-            ofs << c;
-    }
-  
-    // closing output file
-    ofs.close();
-  
-    // closing input file
-    is.close();
-  
-    // remove the original file
-    remove(file_name);
-  
-    // rename the file
-    rename("temp.txt", file_name);
-}
-// Driver code
 int main()
 {
-    string myText;
-    ifstream MyReadFile("save_receipt.txt");
-    while (getline(MyReadFile, myText))
+
+    map<string, float> bakery;
+    bakery["Choclatecake"] = 585.5;
+    bakery["Strawberrycake"] = 579;
+    bakery["Mango"] = 345.6;
+    bakery["Vanillacake"] = 650;
+    bakery["MixedFruitcake"] = 539.9;
+    // Access value by key
+    cout << bakery["Choclatecake"] << endl;
+    bakery.at("Mango") = 82;
+    cout << bakery["Vanillacake"] << endl;
+
+    cout << bakery["Mango"] << endl;
+
+    // cout << bakery.at("Vanillacake")  << endl;
+
+    // iterate all elements
+    map<string, float>::iterator iter;
+    cout << "keys"
+         << "  &  "
+         << "values" << endl;
+
+    for (iter = bakery.begin(); iter != bakery.end(); iter++)
     {
-        cout << myText << endl;
+        cout << (*iter).first << "    " << (*iter).second << "\n";
     }
-    int n = 3;
-    delete_line("save_receipt.txt", n);
+
     return 0;
 }
