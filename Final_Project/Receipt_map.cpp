@@ -119,6 +119,9 @@ void Display_allFood(Receipt obj)
             Welcome_page(obj);
             exit(0);
             break;
+        default:
+            obj.total_item_sold -= 1;
+            break;
         }
     };
     MyWriteFile.close();
@@ -147,7 +150,7 @@ void Display_Receipt(Receipt obj)
     time_t now = time(0);
     char *dt = ctime(&now);
     cout << "\nTime Purchase: " << dt;
-    cout << "==============================================\n"
+    cout << "=============================================="
          << endl;
     cout << "Product           Qty        Price       Total" << endl;
     string myText1;
@@ -157,11 +160,11 @@ void Display_Receipt(Receipt obj)
         cout << myText1 << endl;
     }
     MyReadFile.close();
-    cout << "\n==============================================" << endl;
-    cout << "Total                                     " << obj.Total_Price << "$" << endl;
-    cout << "Total + 10% Tax                           " << obj.Total_Price * 1.1 << "$" << endl;
-    cout << "Received                                  " << obj.Received_amount << "$" << endl;
-    cout << "Change                                    " << obj.Received_amount - (obj.Total_Price * 1.1) << "$" << endl;
+    cout << "==============================================" << endl;
+    cout << "                  Total                    " << obj.Total_Price << "$" << endl;
+    cout << "                  Total + 10% Tax          " << obj.Total_Price * 1.1 << "$" << endl;
+    cout << "                  Received                 " << obj.Received_amount << "$" << endl;
+    cout << "                  Change                   " << obj.Received_amount - (obj.Total_Price * 1.1) << "$" << endl;
     cout << "\nTotal number of item sold: " << obj.total_item_sold - 1 << endl;
     cout << "THANK YOU FOR YOUR PATRONAGE \nPLEASE COME AGAIN " << endl;
 
@@ -177,11 +180,11 @@ void Check_out(Receipt obj)
 };
 void Welcome_page(Receipt customer1)
 {
-    
+
     cout << "1 : Enter the Shop Name" << endl;
     cout << "2 : Select the Item" << endl;
     cout << "3 : Show selected Item" << endl;
-    
+
     cout << "4 : Check out" << endl;
     cout << "5 : Show the receipt " << endl;
     int choice;
@@ -219,6 +222,6 @@ int main()
 
     Receipt customer1;
     cout << "Welcome to our System" << endl;
-    cout << "------------------------"<<endl;
+    cout << "------------------------" << endl;
     Welcome_page(customer1);
 }
