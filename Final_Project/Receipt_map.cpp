@@ -35,7 +35,7 @@ int Fun_take_num_of_item(string food_name)
     return Number;
 };
 
-void Get_Shop_NCus_name(Receipt obj)
+void Get_Shop_name(Receipt obj)
 {
     cout << "Enter Your Shop Title: ";
     cin >> obj.Shop_Title;
@@ -199,7 +199,7 @@ void Welcome_page(Receipt customer1)
     switch (choice)
     {
     case 1:
-        Get_Shop_NCus_name(customer1);
+        Get_Shop_name(customer1);
         break;
     case 2:
         system("CLS");
