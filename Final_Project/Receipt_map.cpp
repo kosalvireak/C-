@@ -60,6 +60,7 @@ void Display_allFood(Receipt obj)
     {
         obj.total_item_sold += 1;
         cout << "Enter the index to choose the foods: ";
+        system("Color 06");
         cin >> add_item;
         switch (add_item)
         {
@@ -116,6 +117,8 @@ void Display_allFood(Receipt obj)
             obj.Total_Price += stoi(obj.Chicken_Wing[1]) * Number1;
             break;
         case 99:
+            system("CLS");
+            system("Color 00");
             Welcome_page(obj);
             exit(0);
             break;
@@ -130,6 +133,7 @@ void Display_Selected_item(Receipt obj)
 {
 
     system("CLS");
+    system("Color 03");
     string myText;
     ifstream MyReadFile("save_receipt.txt");
     while (getline(MyReadFile, myText))
@@ -144,6 +148,7 @@ void Display_Receipt(Receipt obj)
 {
     // Clear above screen
     system("CLS");
+    system("Color F0");
     cout << "\nShop name: " << obj.Shop_Title << endl;
     cout << "Customer name: " << obj.Customer_Name << endl;
 
@@ -173,6 +178,7 @@ void Display_Receipt(Receipt obj)
 };
 void Check_out(Receipt obj)
 {
+    system("Color 00");
     cout << "The total price include tax is: " << obj.Total_Price * 1.1 << "$" << endl;
     cout << "Enter the Received amount in ($): ";
     cin >> obj.Received_amount;
@@ -180,11 +186,11 @@ void Check_out(Receipt obj)
 };
 void Welcome_page(Receipt customer1)
 {
+    system("Color 00");
 
     cout << "1 : Enter the Shop Name" << endl;
     cout << "2 : Select the Item" << endl;
     cout << "3 : Show selected Item" << endl;
-
     cout << "4 : Check out" << endl;
     cout << "5 : Show the receipt " << endl;
     int choice;
@@ -216,6 +222,7 @@ void Welcome_page(Receipt customer1)
 int main()
 {
     system("CLS");
+    system("Color 00");
     // deletes the file if it exists b4 the code started
     char filename[] = "save_receipt.txt";
     int result = remove(filename);

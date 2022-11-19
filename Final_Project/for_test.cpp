@@ -1,36 +1,25 @@
-
+// C++ program to illustrate coloring
 #include <iostream>
-#include <map>
-#include <string>
+#include <stdlib.h>
 using namespace std;
+
+// Driver Code
 int main()
 {
+    // B for background Color(Light Aqua)
+    // 5 for text color(Purple)
+    system("Color F0");
+    cout << "Geeks";
 
-    map<string, float> bakery;
-    bakery["Choclatecake"] = 585.5;
-    bakery["Strawberrycake"] = 579;
-    bakery["Mango"] = 345.6;
-    bakery["Vanillacake"] = 650;
-    bakery["MixedFruitcake"] = 539.9;
-    // Access value by key
-    cout << bakery["Choclatecake"] << endl;
-    bakery.at("Mango") = 82;
-    cout << bakery["Vanillacake"] << endl;
+    // 1 for background Color(Blue)
+    // 6 for text color(Yellow)
+    // system("Color 06");
+    cout << " For ";
 
-    cout << bakery["Mango"] << endl;
-
-    // cout << bakery.at("Vanillacake")  << endl;
-
-    // iterate all elements
-    map<string, float>::iterator iter;
-    cout << "keys"
-         << "  &  "
-         << "values" << endl;
-
-    for (iter = bakery.begin(); iter != bakery.end(); iter++)
-    {
-        cout << (*iter).first << "    " << (*iter).second << "\n";
-    }
+    // D for background Color(Light Purple)
+    // E for text color(Light Yellow)
+    // system("Color 0E");
+    cout << "Geeks";
 
     return 0;
 }
