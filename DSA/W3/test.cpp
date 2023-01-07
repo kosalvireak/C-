@@ -1,24 +1,29 @@
 #include <iostream>
 using namespace std;
-int main()
+int arr[5] = {11, 22, 33, 44, 55};
+int arr_size = 5;
+
+void delete_all()
 {
-    int arr[10] = {11, 22, 33, 44, 55};
-    int arr_size = 5;
-    int i, pos = 2;
-    for (i = 0; i < arr_size; i++)
+    string del;
+    cout << "Do you want to delete this array: (Y/N) ?";
+    cin >> del;
+    if (del == "Y")
     {
-        cout << arr[i] << " ";
-    }
-    for (i = arr_size; i > pos; i--)
-    {
-        arr[i] = arr[i + 1];
-    }
-    cout << i;
-    cout << "\n";
-    arr[i] = 99;
-    for (i = 0; i < arr_size; i++)
-    {
-        cout << arr[i] << " ";
+        for (int j = 0; j < arr_size; j++)
+        {
+            arr[j] = arr[j + 1];
+            j--;
+            arr_size--;
+        }
     }
 
+    for (int i = 0; i < arr_size; i++)
+    {
+        cout << arr[i] << " ";
+    }
+}
+int main()
+{
+    delete_all();
 }

@@ -18,7 +18,7 @@ int main()
                 arr[j] = arr[j + 1];
             found++;
             i--;
-            arr_size--;
+            // arr_size--;
         }
     }
     if (found == 0)
