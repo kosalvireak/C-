@@ -94,5 +94,10 @@ int main()
 
     cout << "Array after sort Descending: " << endl;
     sortDescending(array, array_size);
-    showElement(array, array_size + 1);
+    // the element at array[0] is an address, not part of its element so I start the i from 1 instead of 0
+    // I don't called display function because of t
+    for (int i = 1; i <= array_size; i++)
+    {
+        cout << array[i] << " \t";
+    }
 }
