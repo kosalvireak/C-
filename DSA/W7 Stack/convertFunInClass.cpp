@@ -9,6 +9,7 @@ public:
     int myStack[MAX]; // stack array
 
     Stack() { top = -1; }
+
     bool push(int item)
     {
         if (top >= (MAX - 1))
@@ -50,6 +51,7 @@ int main()
     stack.push(2);
     stack.push(4);
     stack.push(6);
+    stack.push(19);
     cout << "The Stack Pop : " << endl;
     while (!stack.isEmpty())
     {
