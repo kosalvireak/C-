@@ -53,9 +53,16 @@ int main()
     stack.push(6);
     stack.push(19);
     cout << "The Stack Pop : " << endl;
-    while (!stack.isEmpty())
-    {
-        cout << stack.pop() << endl;
-    }
+    cout << stack.pop();
+    cout << stack.pop();
+    cout << stack.pop();
+    cout << stack.pop();
+    cout << stack.pop();
+    cout << stack.pop();
+    cout << stack.pop();
+    // while (!stack.isEmpty())
+    // {
+    //     cout << stack.pop() << endl;
+    // }
     return 0;
 }
