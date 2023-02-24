@@ -135,4 +135,8 @@ int main()
     // cout << "\nqueue empty: " << queue.isEmptyQ() << endl;
     // cout << "queue full: " << queue.isFull() << endl;
     cout << "searchIndex: " << searchIndex(4, 3, 9);
+    if (searchIndex(4, 5, 9))
+    {
+        cout << "in if ";
+    }
 };
