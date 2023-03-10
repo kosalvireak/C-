@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdlib.h>
 using namespace std;
 struct node
 {
@@ -8,30 +9,24 @@ struct node
 int main()
 {
     // Create pointer to next node
-    struct node *tail = NULL;
-    struct node *second = NULL;
-    struct node *first = NULL;
-    struct node *head = NULL;
+    struct node *head, *second, *third, *forth, *tail = NULL;
 
     // Create node
     head = (struct node *)malloc(sizeof(struct node));
-    first = (struct node *)malloc(sizeof(struct node));
     second = (struct node *)malloc(sizeof(struct node));
+    third = (struct node *)malloc(sizeof(struct node));
+    forth = (struct node *)malloc(sizeof(struct node));
     tail = (struct node *)malloc(sizeof(struct node));
 
-    // Show the address of each node
-    cout << "head address :" << &head << endl;
-    cout << "first address :" << &first << endl;
-    cout << "second address :" << &second << endl;
-    cout << "tail address :" << &tail << endl;
-
-    head->data = 11;
-    head->link = first;
-    first->data = 22;
-    first->link = second;
-    second->data = 33;
-    second->link = tail;
-    tail->data = 44;
+    head->data = 35;
+    head->link = second;
+    second->data = 43;
+    second->link = third;
+    third->data = 19;
+    third->link = forth;
+    forth->data = 65;
+    forth->link = tail;
+    tail->data = 38;
     tail->link = NULL;
 
     struct node *current = head;

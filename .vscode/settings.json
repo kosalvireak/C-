@@ -1,5 +1,6 @@
 {
     "files.associations": {
+        "*.ejs": "html",
         "iostream": "cpp",
         "array": "cpp",
         "ctime": "cpp",
@@ -14,7 +15,8 @@
         "xstring": "cpp",
         "xtree": "cpp",
         "queue": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "utility": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
