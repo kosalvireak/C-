@@ -6,13 +6,17 @@ struct node
     int data;
     struct node *link;
 };
+void insertNode(int){
+
+};
+
 int main()
 {
     // Create pointer to next node
     struct node *head, *second, *third, *forth, *tail = NULL;
-
-    // Create node
-    head = (struct node *)malloc(sizeof(struct node));
+    yu
+        // Create node
+        head = (struct node *)malloc(sizeof(struct node));
     second = (struct node *)malloc(sizeof(struct node));
     third = (struct node *)malloc(sizeof(struct node));
     forth = (struct node *)malloc(sizeof(struct node));
