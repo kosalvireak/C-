@@ -61,9 +61,9 @@ int main()
     }
 
     // 5.	After that they want to see which is the most expensive and lowest price of car.
-
     int expensive = 0;
     int lowest = 0;
+    WeCar mostExpensive, lessExpensive;
     for (WeCar car : cars)
     {
         if (expensive == 0 && lowest == 0)
@@ -75,16 +75,20 @@ int main()
         {
             if (car.price > expensive)
             {
+                mostExpensive = car;
                 expensive = car.price;
             }
             else if (car.price < lowest)
             {
+                lessExpensive = car;
                 lowest = car.price;
             }
         }
     }
 
-    cout << "\nThe most expensive price: " << expensive << endl
-         << "\nThe lowest price: " << lowest;
+    cout << "\nThe most expensive price: " << expensive << endl;
+    mostExpensive.display();
+    cout << "\nThe lowest price: " << lowest << endl;
+    lessExpensive.display();
     return 0;
 }
