@@ -1,28 +1,32 @@
 #include <iostream>
+
 using namespace std;
-void reversRecursive(int number)
+
+void reverseRecursive(int number)
 {
     if (number < 10)
-        cout << number << " ";
-    else
     {
-        cout << number % 10 << " ";   // cout the remainder
-        reversRecursive(number / 10); // pass the value of number/10
+        cout << number << " "; // cout the number
+        return;
     }
+    cout << number % 10 << " ";    // cout the remainder
+    reverseRecursive(number / 10); // pass the value of number/10
 }
-void reversLoop(int number)
+
+void reverseLoop(int number)
 {
     while (number > 10)
     {
         cout << number % 10 << " ";
         number /= 10;
     }
-    cout << number;
+    cout << number << " ";
 }
+
 int main()
 {
-    cout << "reversRecursive: ";
-    reversRecursive(123456789);
-    cout << "\nreversLoop: ";
-    reversLoop(123456789);
+    reverseRecursive(123456789);
+    cout << endl;
+    reverseLoop(123456789);
+    return 0;
 }

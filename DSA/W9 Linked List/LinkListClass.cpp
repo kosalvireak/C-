@@ -11,13 +11,15 @@ public:
         this->next = nullptr;
     }
 };
-class LinkedList
+class LinkedList // class of whole link list
 {
 public:
     LinkedListNode *head;
+    LinkedListNode *tail;
     LinkedList()
     {
         this->head = nullptr;
+        this->tail = nullptr;
     }
     void insertNode(int data) // insert at the end of list
     {
@@ -25,19 +27,30 @@ public:
         if (head == nullptr) // check if there is no node assign head to node
         {
             head = newNode;
-            return;
+            tail = newNode;
+            tail->next = head; // point tail to head
         }
-        LinkedListNode *current = head;
-        while (current->next != nullptr) // travel to find the last node
+        else
         {
-            current = current->next;
+            tail->next = newNode; // last node point to new node
+            tail = newNode;       // update tail to new node
+            tail->next = head;    // point tail to head
         }
-        current->next = newNode; // last node point to new node
+    }
+
+    void lastNode()
+    {
+        LinkedListNode *currentNode = head;
+        while (currentNode->next != head)
+        {
+            currentNode = currentNode->next;
+        }
+        cout << "Last node is: " << currentNode->data << endl;
     }
     void printList()
     {
         LinkedListNode *currentNode = head;
-        while (currentNode->next != nullptr)
+        while (currentNode->next != head)
         {
             cout << currentNode->data << endl;
             currentNode = currentNode->next;
@@ -50,7 +63,6 @@ public:
         LinkedListNode *tempHead = head;
         if (tempHead == nullptr) // check if linked list is not empty
         {
-            // return;
             cout << "Linked List is empty";
             return;
         }
@@ -58,15 +70,13 @@ public:
         LinkedListNode *prevNode = nullptr;
         while (currentNode->next != nullptr && i != position) // else -> travel through linked list stop when i = position
         {
-
             i++;
-            // cout << "currentNode->data" << currentNode->data << endl;
             prevNode = currentNode;
             currentNode = currentNode->next;
         }
         if (position > i) // if position bigger then linked list size return false
         {
-            cout << "Position out of range" << endl;
+            cout << "Position " << position << " out of range" << endl;
             return;
         }
         else
@@ -77,16 +87,26 @@ public:
             delete currentNode;
         }
     }
+    void swap(Node **a, Node **b)
+    {
+        Node *temp = *a;
+        *a = *b;
+        *b = temp;
+    }
 };
 int main()
 {
     LinkedList list;
-    list.insertNode(01);
-    list.insertNode(11);
-    list.insertNode(21);
-    list.insertNode(31);
-    list.printList();
-    list.deleteNode(0);
+    list.insertNode(1);
+    list.insertNode(3);
+    list.insertNode(4);
+    list.insertNode(4);
+    list.insertNode(7);
+    list.insertNode(8);
+    list.insertNode(15);
+    list.insertNode(18);
+    // list.printList();
+    // list.quickSort();
     list.printList();
     return 0;
 }
