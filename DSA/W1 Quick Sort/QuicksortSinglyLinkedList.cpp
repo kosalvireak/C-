@@ -7,32 +7,31 @@ class QuickSortLinkedList
     {
         int data;
         Node *next;
+        Node *prev;
         Node(int d)
         {
             this->data = d;
             this->next = NULL;
+            this->prev = NULL;
         }
     };
 
     Node *head = NULL;
+    Node *tail = NULL;
 
 public:
-    void addNode(int data)
+    void
+    addNode(int data)
     {
         if (head == NULL)
         {
             head = new Node(data);
-
+            head->next = tail;
+            head->prev = tail;
+            tail->next = NULL;
             return;
         }
-        Node *curr = head;
-        while (curr->next != NULL)
-        {
-            curr = curr->next;
         }
-        Node *newNode = new Node(data);
-        curr->next = newNode;
-    }
 
     void printList(Node *n)
     {
@@ -43,22 +42,21 @@ public:
         }
     }
 
-    // Initiate the first and the last node without breaking any links in the whole linked list.
-    Node *partitionLast(Node *start, Node *end)
+    Node *partition(Node *start, Node *end)
     {
-        if (start == end || start == NULL || end == NULL)
+        if (start == end || start == NULL || end == NULL) // check if the list is empty then exit the function
             return start;
 
-        Node *pivot_prev = start;
+        Node *pos = start;
         Node *curr = start;
-        int pivot = end->data;
+        int pivot = end->data; // use last node of the list as a pivot
 
-        // Iterate till pen-ultimate node, since the last node is the PIVOT
+        // Iterate from start to end node of the list
         while (start != end)
         {
             if (start->data < pivot)
             {
-                pivot_prev = curr;
+                pos = curr;
                 int temp = curr->data;
                 curr->data = start->data;
                 start->data = temp;
@@ -67,33 +65,32 @@ public:
             start = start->next;
         }
 
-        // swap whichever is following suitable index and pivot
+        // curr is the number that bigger then pivot #25 thus swap bigger number to the end
         int temp = curr->data;
         curr->data = pivot;
         end->data = temp;
-
-        return pivot_prev;
+        return pos;
     }
 
     void sort(Node *start, Node *end)
     {
-        if (start == NULL || start == end || start == end->next)
+        if (start == NULL || start == end) // check if the list is empty then exit the function
             return;
 
         // split list and partition recurse
-        Node *pivot_prev = partitionLast(start, end);
-        sort(start, pivot_prev);
+        Node *pos = partition(start, end);
+        sort(start, pos);
 
         // If PIVOT = START, we pick from next of PIVOT.
-        if (pivot_prev != NULL && pivot_prev == start)
+        if (pos != NULL && pos == start)
         {
-            sort(pivot_prev->next, end);
+            sort(pos->next, end);
         }
 
-        // If PIVOT is still in between the list, start from next to pivot since we have pivot_prev, so we move two nodes.
-        else if (pivot_prev != NULL && pivot_prev->next != NULL)
+        // If PIVOT is still in between the list, start from next to pivot since we have pos, so we move two nodes.
+        else if (pos != NULL && pos->next != NULL)
         {
-            sort(pivot_prev->next->next, end);
+            sort(pos->next->next, end);
         }
     }
 
@@ -115,7 +112,7 @@ public:
         }
         cout << "Linked List before sorting" << endl;
         printList(head);
-        sort(head, tail);
+        // sort(head, tail);
         cout << "\nLinked List after sorting" << endl;
         printList(head);
     }
