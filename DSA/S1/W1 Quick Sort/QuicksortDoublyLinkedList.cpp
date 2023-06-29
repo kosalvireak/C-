@@ -7,10 +7,12 @@ class QuickSortLinkedList
     {
         int data;
         Node *next;
+        Node *prev;
         Node(int d)
         {
             this->data = d;
             this->next = NULL;
+            this->prev = NULL;
         }
     };
 
@@ -31,6 +33,8 @@ public:
         }
         Node *newNode = new Node(data);
         curr->next = newNode;
+        newNode->prev = curr;
+        newNode->next = nullptr;
     }
 
     void printList(Node *n)
@@ -93,7 +97,22 @@ public:
             sort(pos->next->next, end);
         }
     }
+    void deletion(int data)
+    { // delete front
 
+        cout << "hey";
+        Node *currentNode = head;
+        while (currentNode != nullptr)
+        {
+            if (currentNode->data == data)
+            {
+                currentNode->prev->next = currentNode->next;
+                currentNode->next->prev = currentNode->prev;
+                delete currentNode;
+            }
+            currentNode = currentNode->next;
+        }
+    }
     void execute()
     {
         addNode(10);
@@ -111,9 +130,10 @@ public:
         }
         cout << "Linked List before sorting" << endl;
         printList(head);
+        deletion(2);
         // sort(head, tail);
-        // cout << "\nLinked List after sorting" << endl;
-        // printList(head);
+        cout << "\nLinked List after sorting" << endl;
+        printList(head);
     }
 };
 
