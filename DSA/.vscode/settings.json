@@ -7,6 +7,12 @@
         "xstring": "cpp",
         "xutility": "cpp",
         "algorithm": "cpp",
-        "list": "cpp"
+        "list": "cpp",
+        "deque": "cpp",
+        "type_traits": "cpp",
+        "xlocale": "cpp",
+        "queue": "cpp",
+        "stack": "cpp",
+        "xlocinfo": "cpp"
     }
 }
